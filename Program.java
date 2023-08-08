@@ -42,8 +42,12 @@ public class Program {
             {
                 System.out.println("введите данные:");
                 String userData = iScanner.nextLine();
-                DataIn dataIn = new DataIn(userData);
-                System.out.println(dataIn.toString());
+                String[] ArrParse = ParserDate.dateParse(userData);
+                if (Instruments.CoutnOfArray(ArrParse)) {
+                    System.err.println(true);
+                }else{
+                    System.out.println(false);
+                }
             }
         }
         while (true);
