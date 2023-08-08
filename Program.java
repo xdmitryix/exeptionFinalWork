@@ -32,7 +32,7 @@ import java.util.Scanner;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyCountExaption {
         Scanner iScanner = new Scanner(System.in, "Cp866");
         System.out.println("список команд: add-добавить данные");
         do{
@@ -43,11 +43,8 @@ public class Program {
                 System.out.println("введите данные:");
                 String userData = iScanner.nextLine();
                 String[] ArrParse = ParserDate.dateParse(userData);
-                if (Instruments.CoutnOfArray(ArrParse)) {
-                    System.err.println(true);
-                }else{
-                    System.out.println(false);
-                }
+                if (Instruments.CoutnOfArray(ArrParse) == false) throw new MyCountExaption();
+
             }
         }
         while (true);
