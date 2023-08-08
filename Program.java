@@ -26,6 +26,7 @@
 
 // Критерии оценивания:
 // Слушатель напишите приложение, которое будет запрашивать у пользователя следующие данные в произвольном порядке, разделенные пробелом.
+// петров петр петрович 28.11.1992 89228372211 f
 
 import java.util.Scanner;
 
@@ -39,7 +40,10 @@ public class Program {
             String command = iScanner.nextLine();
             if (command.equals("add"))
             {
-                System.out.println("тут будет добавление пользователя!!!");
+                System.out.println("введите данные:");
+                String userData = iScanner.nextLine();
+                DataIn dataIn = new DataIn(userData);
+                System.out.println(dataIn.toString());
             }
         }
         while (true);
