@@ -43,7 +43,11 @@ public class Program {
                 System.out.println("введите данные:");
                 String userData = iScanner.nextLine();
                 String[] ArrParse = ParserDate.dateParse(userData);
-                if (Instruments.CoutnOfArray(ArrParse) == false) throw new MyCountExaption();
+                if (Instruments.CoutnOfArray(ArrParse) == false){
+                    throw new MyCountExaption();
+                }else{
+                    Instruments.CheckData(ArrParse);
+                }
 
             }
         }
