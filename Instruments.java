@@ -25,7 +25,7 @@ public class Instruments {
         try{
             String secondStr = (String) Array[1];
         }catch(Exception e){
-            System.out.println("Некорректно введено Имя!" + e);
+            System.out.println("Некорректно введено имя!" + e);
         }
         try{
             String thirdStr = (String) Array[2];
@@ -38,8 +38,13 @@ public class Instruments {
         }catch(Exception e){
             System.out.println("Некорректно введена дата. нужен формат dd.MM.yyyy");
         }
-
-
-
+        try{
+            long fiveLong = Long.valueOf(Array[4]);
+        }catch(Exception e){
+            System.out.println("введены некорректные данные номера телефона(введены не числа)");
+        }
+        // if ((!Array[5].equals("f")) || (!Array[5].equals("m"))) {
+        //     throw new RuntimeException("введены некорректные данные пола (нужно ввести f или m)");
+        // }
     }
 }
