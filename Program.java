@@ -49,7 +49,7 @@ public class Program {
                     if (Instruments.CheckData(ArrParse) == false){
                         continue;
                     }else{
-                        
+                       RedactFile.WrFile(ArrParse[0], userData);
                     }
                 }
 

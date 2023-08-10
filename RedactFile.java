@@ -4,7 +4,7 @@ import java.io.IOException;
 public class RedactFile {
     
     public static void WrFile(String name, String allData){
-        try(FileWriter writer = new FileWriter("notes3.txt", false))
+        try(FileWriter writer = new FileWriter(name + ".txt", true))
         {
             String text = allData;
             writer.write(text);
