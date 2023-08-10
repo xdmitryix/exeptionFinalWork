@@ -46,7 +46,11 @@ public class Program {
                 if (Instruments.CoutnOfArray(ArrParse) == false){
                     throw new MyCountExaption();
                 }else{
-                    Instruments.CheckData(ArrParse);
+                    if (Instruments.CheckData(ArrParse) == false){
+                        continue;
+                    }else{
+                        
+                    }
                 }
 
             }

@@ -16,35 +16,47 @@ public class Instruments {
         }
     }
 
-    public static void CheckData(String[] Array){
+    public static boolean CheckData(String[] Array){
+        Boolean flag = true;
         try{
             String firstStr = (String) Array[0];
         }catch(Exception e){
+            flag = false;
             System.out.println("Некорректно введена фамилия!" + e);
         }
         try{
             String secondStr = (String) Array[1];
         }catch(Exception e){
+            flag = false;
             System.out.println("Некорректно введено имя!" + e);
         }
         try{
             String thirdStr = (String) Array[2];
         }catch(Exception e){
+            flag = false;
             System.out.println("Некорректно введено отчество!" + e);
         }
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         try{
             formatter.parse(Array[3]);
         }catch(Exception e){
+            flag = false;
             System.out.println("Некорректно введена дата. нужен формат dd.MM.yyyy");
         }
         try{
             long fiveLong = Long.valueOf(Array[4]);
         }catch(Exception e){
-            System.out.println("введены некорректные данные номера телефона(введены не числа)");
+            flag = false;
+            System.out.println("введены некорректные данные номера телефона (введены не числа)");
         }
-        // if ((!Array[5].equals("f")) || (!Array[5].equals("m"))) {
-        //     throw new RuntimeException("введены некорректные данные пола (нужно ввести f или m)");
-        // }
+        try{
+            if ((!Array[5].equals("f")) && (!Array[5].equals("m"))){
+                throw new Exception();
+            }
+        }catch(Exception e){
+            flag = false;
+            System.out.println("Введены некорректные данные пола (введите f или m)");
+        }
+        return flag;
     }
 }
