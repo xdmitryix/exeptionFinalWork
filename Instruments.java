@@ -15,22 +15,37 @@ public class Instruments {
     public static boolean CheckData(String[] Array){
         Boolean flag = true;
         try{
-            String firstStr = (String) Array[0];
+            char[] chars = Array[0].toCharArray();
+            for (char c : chars){
+                if (!Character.isLetter(c)) {
+                    throw new Exception();
+                }
+            }
         }catch(Exception e){
             flag = false;
-            System.out.println("Некорректно введена фамилия!" + e);
+            System.out.println("Фамилия не может сожержать цифры и знаки!");
         }
         try{
-            String secondStr = (String) Array[1];
+            char[] chars = Array[1].toCharArray();
+            for (char c : chars){
+                if (!Character.isLetter(c)) {
+                    throw new Exception();
+                }
+            }
         }catch(Exception e){
             flag = false;
-            System.out.println("Некорректно введено имя!" + e);
+            System.out.println("Имя не может сожержать цифры и знаки!");
         }
         try{
-            String thirdStr = (String) Array[2];
+            char[] chars = Array[2].toCharArray();
+            for (char c : chars){
+                if (!Character.isLetter(c)) {
+                    throw new Exception();
+                }
+            }
         }catch(Exception e){
             flag = false;
-            System.out.println("Некорректно введено отчество!" + e);
+            System.out.println("отчество не может сожержать цифры и знаки!");
         }
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         try{
