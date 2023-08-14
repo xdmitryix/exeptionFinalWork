@@ -9,9 +9,11 @@ public class RedactFile {
             String text = allData;
             writer.write(text);
             writer.append('\n');
+            System.out.println("данные успешно добавлены в файл!");
+            writer.close();
         }
         catch(IOException ex){
             System.out.println(ex.getMessage());
-        } 
+        }
     }
 }

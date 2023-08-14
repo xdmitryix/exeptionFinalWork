@@ -1,4 +1,4 @@
-// Напишите приложение, которое будет запрашивать у пользователя следующие данные в произвольном порядке, разделенные пробелом:
+// Напишите приложение, которое будет запрашивать у пользователя следующие данные, разделенные пробелом:
 // Фамилия Имя Отчество датарождения номертелефона пол
 
 // Форматы данных:
@@ -25,8 +25,8 @@
 // При возникновении проблемы с чтением-записью в файл, исключение должно быть корректно обработано, пользователь должен увидеть стектрейс ошибки.
 
 // Критерии оценивания:
-// Слушатель напишите приложение, которое будет запрашивать у пользователя следующие данные в произвольном порядке, разделенные пробелом.
-// петров петр петрович 28.11.1992 9228372211 f
+// Слушатель напишите приложение, которое будет запрашивать у пользователя следующие данные, разделенные пробелом.
+// ------------------ Пример: петров петр петрович 28.11.1992 9228372211 m ------------------
 
 import java.util.Scanner;
 
@@ -34,13 +34,13 @@ public class Program {
 
     public static void main(String[] args) throws LessMyCountExaption, MoreMyCountExaption{
         Scanner iScanner = new Scanner(System.in, "Cp866");
-        System.out.println("список команд: add-добавить данные");
+        System.out.println("список команд: add-добавить данные, exit-завершить программу.");
         do{
             System.out.println("введите команду");
             String command = iScanner.nextLine().toLowerCase();
             if (command.equals("add")){
                 System.out.println("введите данные:");
-                String userData = iScanner.nextLine();
+                String userData = iScanner.nextLine().toLowerCase();
                 String[] ArrParse = ParserDate.dateParse(userData);
                 if (Instruments.CoutnOfArray(ArrParse) < 6){
                     throw new LessMyCountExaption();
