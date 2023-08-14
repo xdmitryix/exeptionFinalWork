@@ -4,16 +4,12 @@ import java.text.SimpleDateFormat;
 public class Instruments {
     
 
-    public static boolean CoutnOfArray(String[] Array){
+    public static int CoutnOfArray(String[] Array){
         int count = 0;
         for (int i = 0; i < Array.length; i++) {
             count++;
         }
-        if (count==6) {
-            return true;
-        }else{
-        return false;
-        }
+        return count;
     }
 
     public static boolean CheckData(String[] Array){

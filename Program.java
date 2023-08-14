@@ -32,27 +32,27 @@ import java.util.Scanner;
 
 public class Program {
 
-    public static void main(String[] args) throws MyCountExaption {
+    public static void main(String[] args) throws LessMyCountExaption, MoreMyCountExaption{
         Scanner iScanner = new Scanner(System.in, "Cp866");
         System.out.println("список команд: add-добавить данные");
         do{
             System.out.println("введите команду");
             String command = iScanner.nextLine();
-            if (command.equals("add"))
-            {
+            if (command.equals("add")){
                 System.out.println("введите данные:");
                 String userData = iScanner.nextLine();
                 String[] ArrParse = ParserDate.dateParse(userData);
-                if (Instruments.CoutnOfArray(ArrParse) == false){
-                    throw new MyCountExaption();
-                }else{
-                    if (Instruments.CheckData(ArrParse) == false){
-                        continue;
-                    }else{
-                       RedactFile.WrFile(ArrParse[0], userData);
-                    }
+                if (Instruments.CoutnOfArray(ArrParse) < 6){
+                    throw new LessMyCountExaption();
                 }
-
+                if (Instruments.CoutnOfArray(ArrParse) > 6){
+                    throw new MoreMyCountExaption();
+                }               
+                if (Instruments.CheckData(ArrParse) == false){
+                    continue;
+                }else{
+                    RedactFile.WrFile(ArrParse[0], userData);
+                }
             }else{
                 if (command.equals("exit")) {
                     System.out.println("Программа завершила работу.");
@@ -63,5 +63,6 @@ public class Program {
             }
         }
         while (true);
-    }
+            }
 }
+    
