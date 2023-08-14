@@ -53,6 +53,13 @@ public class Program {
                     }
                 }
 
+            }else{
+                if (command.equals("exit")) {
+                    System.out.println("Программа завершила работу.");
+                    break;
+                }else{
+                    System.out.println("введена некорректная команда! Введите команду add или exit!");
+                }
             }
         }
         while (true);
