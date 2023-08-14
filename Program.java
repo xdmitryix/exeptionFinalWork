@@ -37,7 +37,7 @@ public class Program {
         System.out.println("список команд: add-добавить данные");
         do{
             System.out.println("введите команду");
-            String command = iScanner.nextLine();
+            String command = iScanner.nextLine().toLowerCase();
             if (command.equals("add")){
                 System.out.println("введите данные:");
                 String userData = iScanner.nextLine();
